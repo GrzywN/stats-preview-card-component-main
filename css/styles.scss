@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+@import "variables";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 15px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: $font-lexend;
+  font-weight: 400;
+  color: white;
+  background-color: $very-dark-blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats {
+  display: grid;
+  grid-auto-flow: column;
+  width: max-content;
+  max-width: 90vw;
+  max-height: 80vh;
+  background-color: $soft-violet;
+  margin-inline: 1em;
+  position: relative;
+  &__background {
+    position: relative;
+    object-fit: cover;
+    height: 100%;
+    right: 0;
+    mix-blend-mode: multiply;
+  }
+  &__body {
+    background-color: $dark-desaturated-blue;
+    padding: 4em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    mix-blend-mode: none;
+  }
+  &__h1 {
+    font-weight: 700;
+    line-height: 100%;
+    &--insights {
+      font-style: inherit;
+      color: $soft-violet;
+    }
+  }
+  &__p {
+    color: $transparent-white-paragraph;
+  }
+  &__data {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    line-height: 110%;
+    &-container {
+      flex-basis: calc(100% * 1 / 3);
+    }
+    &-label {
+      text-transform: uppercase;
+      color: $transparent-white-paragraph;
+    }
+    &-h2 {
+      font-weight: 700;
+      color: $transparent-white-heading;
+    }
+  }
+}
+
+@media (max-width: 1060px) {
+  .stats {
+    text-align: center;
+    grid-auto-flow: row dense;
+    padding: 2em;
+    &__background {
+      width: 100%;
+      height: auto;
+      grid-row: 1;
+    }
+    &__data {
+      flex-direction: column;
+    }
+  }
+}
