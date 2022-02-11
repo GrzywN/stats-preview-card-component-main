@@ -1,0 +1,161 @@
+/* --Imports--*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+
+/* --Primary colors--*/
+$very-dark-blue: hsl(233, 47%, 7%);
+$dark-desaturated-blue: hsl(244, 38%, 16%);
+$soft-violet: hsl(277, 64%, 61%);
+
+/* --Neutral colors--*/
+$white: hsl(0, 0%, 100%);
+$transparent-white-paragraph: hsla(0, 0%, 100%, 0.75);
+$transparent-white-heading: hsla(0, 0%, 100%, 0.6);
+
+/* --Font variables--*/
+$font-size: 0.9375rem;
+$font-family-1: "Inter", sans-serif;
+$font-family-2: "Lexend Deca", sans-serif;
+
+/* --Border--*/
+$border-radius: 0.625rem;
+
+/* --CSS--*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: $very-dark-blue;
+  color: $white;
+  font-size: $font-size;
+  font-family: $font-family-1;
+}
+
+main {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats {
+  border-radius: $border-radius;
+  background-color: $soft-violet;
+  max-width: 80vw;
+  overflow: hidden;
+  display: grid;
+  grid-auto-flow: column dense;
+  &__head {
+    order: 2;
+  }
+  &__bg {
+    background-color: $soft-violet;
+    mix-blend-mode: multiply;
+    &--desktop {
+      height: 100%;
+    }
+    &--mobile {
+      display: none;
+      width: 100%;
+    }
+  }
+  &__body {
+    background-color: $dark-desaturated-blue;
+    padding: 4em;
+    padding-right: 8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__header {
+    margin: 0;
+    font-weight: 700;
+    line-height: 130%;
+    font-size: 250%;
+    &--accent {
+      color: $soft-violet;
+    }
+  }
+  &__p {
+    color: $transparent-white-paragraph;
+    width: 90%;
+    padding-bottom: 2em;
+    line-height: 150%;
+  }
+  &__data {
+    padding: 0;
+    line-height: 110%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1em;
+    &-header {
+      font-weight: 700;
+      padding-bottom: 0.375em;
+    }
+    &-label {
+      font-family: $font-family-2;
+      text-transform: uppercase;
+      color: $transparent-white-heading;
+      padding-top: 0.375em;
+    }
+  }
+}
+
+// Tablet and mobile design
+
+@media (max-width: 82rem) {
+  .stats {
+    margin-block: 3rem;
+    max-width: 90vw;
+    text-align: center;
+    grid-auto-flow: row dense;
+    &__head {
+      order: 0;
+    }
+    &__bg {
+      &--desktop {
+        display: none;
+      }
+      &--mobile {
+        display: block;
+      }
+    }
+    &__body {
+      height: 100%;
+      padding: 3em;
+      gap: 4em;
+    }
+    &__p {
+      align-self: center;
+      width: 90%;
+      padding: 0;
+    }
+  }
+}
+
+// Only mobile design
+
+@media (max-width: 29.125rem) {
+  .stats {
+    &__body {
+      padding: 2.5em 1.5em;
+    }
+    &__header {
+      font-size: 200%;
+    }
+    &__data {
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+    }
+  }
+}

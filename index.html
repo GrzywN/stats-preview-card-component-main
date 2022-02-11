@@ -3,78 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
+    <meta name="author" content="Karol Binkowski" />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-
+    <link rel="stylesheet" href="styles.css" />
     <title>Frontend Mentor | Stats preview card component</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
-    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <main class="main">
+    <main>
       <div class="stats">
+        <div class="stats__head">
+          <img
+            src="./images/image-header-desktop.jpg"
+            alt="Background"
+            class="stats__bg stats__bg--desktop"
+          />
+          <img
+            src="./images/image-header-mobile.jpg"
+            alt="Background"
+            class="stats__bg stats__bg--mobile"
+          />
+        </div>
         <div class="stats__body">
-          <h1 class="stats__h1">
-            Get <em class="stats__h1--insights">insights</em> that help your
-            business grow.
+          <h1 class="stats__header">
+            Get <span class="stats__header--accent">insights</span> that help
+            your business grow.
           </h1>
           <p class="stats__p">
             Discover the benefits of data analytics and make better decisions
             regarding revenue, customer experience, and overall efficiency.
           </p>
           <div class="stats__data">
-            <div class="stats__data-container">
-              <h2 class="stats__h2">10k+</h2>
+            <div class="stats__data-item">
+              <h2 class="stats__data-header">10k+</h2>
               <p class="stats__data-label">companies</p>
             </div>
-            <div class="stats__data-container">
-              <h2 class="stats__h2">314</h2>
+            <div class="stats__data-item">
+              <h2 class="stats__data-header">314</h2>
               <p class="stats__data-label">templates</p>
             </div>
-            <div class="stats__data-container">
-              <h2 class="stats__h2">12M+</h2>
+            <div class="stats__data-item">
+              <h2 class="stats__data-header">12M+</h2>
               <p class="stats__data-label">queries</p>
             </div>
           </div>
         </div>
-        <picture class="stats__background">
-          <source
-            media="(max-width: 1060px)"
-            srcset="./images/image-header-mobile.jpg"
-            class="stats__background"
-          />
-          <source
-            media="(min-width: 1060px)"
-            srcset="./images/image-header-desktop.jpg"
-            class="stats__background"
-          />
-          <img
-            src="./images/image-header-desktop.jpg"
-            alt="Background"
-            class="stats__background"
-          />
-        </picture>
       </div>
     </main>
-    <!--<div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>-->
   </body>
 </html>
